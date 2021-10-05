@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './components/pages/pages.module';
 import { PortfolioService } from './services/portfolio/portfolio.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const modules = [
   PagesModule
@@ -23,7 +24,8 @@ const services = [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ...modules
+    ...modules,
+    NgbModule
   ],
   providers: [
     ...services

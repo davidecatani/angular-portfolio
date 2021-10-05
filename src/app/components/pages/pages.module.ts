@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { IconsModule } from 'src/app/icons/icons.module';
 
 const components = [
   PortfolioComponent
@@ -25,7 +26,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    IconsModule
   ]
 })
 export class PagesModule { }

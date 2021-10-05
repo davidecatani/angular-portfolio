@@ -1,0 +1,28 @@
+.card-header img {
+    margin-bottom: -50px;
+}
+
+bi {
+    border-top: 2px solid transparent;
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;    
+
+    &.active {
+        border-top-color: green;
+        color: green;
+        
+        &:before {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            border-color: transparent transparent green;
+            border-style: solid;
+            border-width: 3px;
+        }
+    }
+}

@@ -1,1 +1,16 @@
-<p>portfolio works!</p>
+<div *ngIf="user" class="container pt-4">
+    <div class="row">
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-header">
+                    <img class="rounded-circle img-thumbnail" [src]="user.picture.large">
+                </div>
+                <div class="card-body pt-5">
+                    <p class="card-subtitle text-muted mt-2" *ngIf="currentInfo" [innerHtml]="currentInfo.label"></p>
+                    <h2 class="mb-4" *ngIf="currentInfo" [innerHtml]="currentInfo.info"></h2>
+                    <bi *ngFor="let section of sections" [ngClass]="{'active': section === currentTab}" (click)="changeTab(section)" [name]="section"></bi>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
