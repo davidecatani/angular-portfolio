@@ -6,8 +6,7 @@ import { PortfolioService } from 'src/app/services/portfolio/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
+  templateUrl: './portfolio.component.html'
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
 
@@ -43,7 +42,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
           {
             section: 'calendar3',
             label: 'My birthday is',
-            info: user.dob.date
+            info: this.formatDate(user.dob.date)
           },
           {
             section: 'map',
@@ -65,6 +64,11 @@ export class PortfolioComponent implements OnInit, OnDestroy {
         this.getCurrentTab();
       })
     ];
+  }
+
+  formatDate(timeStamp: string): string {
+    const date = new Date(timeStamp);
+    return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
   }
 
   getCurrentTab(): void {
